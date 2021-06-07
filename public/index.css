@@ -1,0 +1,36 @@
+
+nav {
+    display: flex;
+    background: blue;
+    padding: 20px 20px;
+}
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.center {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+input,
+select {
+    margin: 10px 10px;
+    border-radius: 3px;
+    padding: 10px 8px;
+}

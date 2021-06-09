@@ -9,7 +9,7 @@ export default function NewTopicForm (){
     const [name, setName] = useState("");
     const [icon, setIcon] = useState("");
     // const dispatch = useDispatch();
-    // const history = useHistory()
+    const history = useHistory()
     
     const handleSubmit =(e)=> {
         e.preventDefault();
@@ -17,6 +17,8 @@ export default function NewTopicForm (){
             alert("Please give a name to your topic");
             return;
         }
+
+        history.push(ROUTES.topicsRoute())
     }
 
     return (

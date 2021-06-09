@@ -34,3 +34,8 @@ select {
     border-radius: 3px;
     padding: 10px 8px;
 }
+.card input {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}

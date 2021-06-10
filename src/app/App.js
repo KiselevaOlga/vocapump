@@ -70,7 +70,7 @@ function VocabularySetsRoutes () {
         <Route path={`${match.path}/new`}>
           <NewVocabularySetForm />
         </Route>
-        <Route path={`${match.path}/:setID`}>
+        <Route path={`${match.path}/:vocabularySetID`}>
           <VocabularySet />
         </Route>
         <Route path={`${match.path}`}>

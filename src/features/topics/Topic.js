@@ -1,14 +1,15 @@
 import { Link, useParams } from "react-router-dom";
 import ROUTES from "../../app/routes";
-
-
+import {useSelector} from 'react-redux';
+import {selectTopics} from './topicsSlice';
+import {selectVocabularySets} from '../vocabularySets/vocabularySetsSlice';
 
 export default function Topic () {
-    const vocabularySets = {};
-    const topics = {};
+    const vocabularySets = useSelector(selectVocabularySets);
+    const topics = useSelector(selectTopics);
     let { topicID } = useParams();
     const topic = topics[topicID];
-    const vocabularySetsForTopic = topic.setIDs.map(setID => vocabularySets[setID])
+    const vocabularySetsForTopic = topic.vocabularySetIDs.map(vocabularySetID => vocabularySets[vocabularySetID])
 
     return (
         <section>

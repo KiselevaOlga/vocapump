@@ -1,9 +1,10 @@
 import ROUTES from "../../app/routes";
 import {Link} from "react-router-dom";
-
+import {useSelector} from 'react-redux';
+import {selectTopics} from './topicsSlice';
 
 export default function Topics () {
-    const topics = {}
+    const topics = useSelector(selectTopics)
 
     return (
         <section>
@@ -14,7 +15,7 @@ export default function Topics () {
                         <Link to={ROUTES.topicRoute()}>
                             <div>
                                 <h3>{topic.name}</h3>
-                                <p>{topic.setIDs.length} Sets</p>
+                                <p>{topic.vocabularySetIDs.length} Sets</p>
                             </div>
                         </Link>
                     </li>

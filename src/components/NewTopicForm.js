@@ -1,14 +1,15 @@
+import React, { useState } from "react";
 import ROUTES from "../app/routes";
-import {useState} from "react";
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import {uuidv4} from 'uuid';
-import ALL_ICONS from '../assets/icons';
+import {ALL_ICONS} from '../assets/icons';
+import {addTopic} from '../features/topics/topicsSlice';
 
-export default function NewTopicForm (){
+export default function NewTopicForm () {
     const [name, setName] = useState("");
     const [icon, setIcon] = useState("");
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const history = useHistory()
     
     const handleSubmit =(e)=> {
@@ -18,6 +19,11 @@ export default function NewTopicForm (){
             return;
         }
 
+        dispatch(addTopic({
+            name: name,
+            id: uuidv4(),
+            icon,
+        }))
         history.push(ROUTES.topicsRoute())
     }
 
@@ -27,18 +33,21 @@ export default function NewTopicForm (){
                 <h1 className="center">Create a new topic</h1>
                 <div className="form-section">
                     <input 
+                    id="topic-name"
                     placeholder="Type a topic name here"
                     type="text"
                     value={name}
                     onChange = {(e)=>setName(e.currentTarget.value)}
                      />
                     <select
-                    onChange = {(e)=>setIcon(e.currentTarget.value)}>
+                    onChange = {(e)=>setIcon(e.currentTarget.value)}
+                    required
+                    defaultValue='default'>
                         <option value="default">
                             Choose an icon for your topic
                         </option>
-                        {ALL_ICONS.map(({name, url})=>(
-                            <option key={url} value={name}>
+                        {ALL_ICONS.map(({ name, url }) => (
+                            <option key={url} value={url}>
                                 {name}
                             </option>
                         ))}

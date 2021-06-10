@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 export const topicsSlice = createSlice({
     name: 'topics',
@@ -10,16 +10,16 @@ export const topicsSlice = createSlice({
                 id: id,
                 name: name,
                 icon,
-                setIDs: []
+                vocabularySetIDs: []
             }
         },
         addVocabularySetIDForTopic: (state, action) => {
-            const {topicID, setID} = action.payload;
-            state.topics[topicID].setIDs.push(setID);
+            const {topicID, vocabularySetID} = action.payload;
+            state.topics[topicID].vocabularySetIDs.push(vocabularySetID);
         }
     }
 })
 
-export const selectTopic = (state) => state.topics.topics;
-export const {addTopic, addVocabularySetIDForTopic} = topicsSlice.actions;
+export const { addTopic, addVocabularySetIDForTopic } = topicsSlice.actions;
+export const selectTopics = (state) => {return state.topics.topics};
 export default topicsSlice.reducer;

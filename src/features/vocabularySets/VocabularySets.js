@@ -1,8 +1,10 @@
 import {Link} from 'react-router-dom';
 import ROUTES from '../../app/routes';
+import {useSelector} from 'react-redux';
+import {selectVocabularySets} from './vocabularySetsSlice';
 
 export default function VocabularySets () {
-    const vocabularySets = {};
+    const vocabularySets = useSelector(selectVocabularySets);
     
     return (
         <section>

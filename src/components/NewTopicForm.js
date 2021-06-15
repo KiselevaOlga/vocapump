@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ROUTES from "../app/routes";
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
-import {uuidv4} from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import {ALL_ICONS} from '../assets/icons';
 import {addTopic} from '../features/topics/topicsSlice';
 
@@ -26,7 +26,6 @@ export default function NewTopicForm () {
         }))
         history.push(ROUTES.topicsRoute())
     }
-
     return (
         <section>
             <form onSubmit={handleSubmit}>
@@ -43,8 +42,11 @@ export default function NewTopicForm () {
                     onChange = {(e)=>setIcon(e.currentTarget.value)}
                     required
                     defaultValue='default'>
-                        <option value="default">
+                        <option value="">
                             Choose an icon for your topic
+                        </option>
+                        <option value="default">
+                            All
                         </option>
                         {ALL_ICONS.map(({ name, url }) => (
                             <option key={url} value={url}>

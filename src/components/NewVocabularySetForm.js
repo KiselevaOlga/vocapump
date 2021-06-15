@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import ROUTES from "../app/routes";
-import {uuidv4} from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import {useSelector, useDispatch} from 'react-redux';
 import {selectTopics} from '../features/topics/topicsSlice';
 import {addVocabularySetForTopicID} from '../features/vocabularySets/vocabularySetsSlice';
@@ -69,8 +69,9 @@ export default function NewVocabularySetForm () {
                 <select 
                 placeholder="Topic" 
                 onChange={(e)=>setTopicID(e.currentTarget.value)}
-                id="vocabularySet-topic">
-                    <option value="">Select a topic</option>
+                id="vocabularySet-topic"
+                required>
+                    <option value="" >Select a topic</option>
                     {Object.values(topics).map(topic=>(
                         <option key={topic.id} value={topic.id}>
                             {topic.name}

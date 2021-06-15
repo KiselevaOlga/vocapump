@@ -5,14 +5,14 @@ import {selectTopics} from './topicsSlice';
 
 export default function Topics () {
     const topics = useSelector(selectTopics)
-
+    console.log('Topics', topics)
     return (
         <section>
             <h1 className="center">Topics</h1>
             <ul className="topics-list">
                 {Object.values(topics).map(topic=>(
                     <li key={topic.id}>
-                        <Link to={ROUTES.topicRoute()}>
+                        <Link to={ROUTES.topicRoute(topic.id)}>
                             <div>
                                 <h3>{topic.name}</h3>
                                 <p>{topic.vocabularySetIDs.length} Sets</p>

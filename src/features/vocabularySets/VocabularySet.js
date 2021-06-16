@@ -8,9 +8,6 @@ export default function VocabularySet () {
     const vocabularySets = useSelector(selectVocabularySets);
     let {vocabularySetID} = useParams();
     const vocabularySet = vocabularySets[vocabularySetID]; 
-    console.log("Vocabulary sets", vocabularySets);
-    console.log('One ID', vocabularySetID)
-    console.log('IDs of vocabulary sets', vocabularySet);
 
     return (
         <section>

@@ -1,5 +1,5 @@
-import {initialState, addTopic, selectTopics} from '../topicsSlice';
-import topicsReducer from '../topicsSlice';
+import {initialState, addTopic, selectTopics} from '../features/topics/topicsSlice';
+import topicsReducer from '../features/topics/topicsSlice';
 import { Selector } from 'redux-testkit';
 
 const testState = {

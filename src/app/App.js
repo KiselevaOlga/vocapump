@@ -24,13 +24,14 @@ export default function App () {
             <NavLink to={ROUTES.topicsRoute()} activeClassName="active">Topics</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.vocabularySetsRoute()} activeClassName="active">Practice sets</NavLink>
+            <NavLink to={ROUTES.vocabularySetsRoute()} activeClassName="active" name='vocs'>Practice sets</NavLink>
           </li>
           <li>
             <NavLink to={ROUTES.createNewVocabularySetRoute()} activeClassName="active">Create new vocabulary set</NavLink>
           </li>
         </ul>
       </nav>
+      <h3>To start click on Topics</h3>
       <Switch>
         <Route path="/topics">
           <TopicsRoutes />

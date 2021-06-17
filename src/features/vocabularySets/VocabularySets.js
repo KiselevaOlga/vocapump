@@ -9,6 +9,7 @@ export default function VocabularySets () {
     return (
         <section>
             <h1 className="center">Vocabulary sets</h1>
+            <h2>Hello</h2>
             <ul>
                 {Object.values(vocabularySets).map((set) => (
                     <Link key={set.id} to={ROUTES.vocabularySetRoute(set.id)}>

@@ -5,7 +5,6 @@ import {selectTopics} from './topicsSlice';
 
 export default function Topics () {
     const topics = useSelector(selectTopics)
-    console.log('Topics', topics)
     return (
         <section>
             <h1 className="center">Topics</h1>

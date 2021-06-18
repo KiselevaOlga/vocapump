@@ -28,6 +28,7 @@ export default function NewTopicForm () {
     }
     return (
         <section>
+         <h2>Hello</h2>
             <form onSubmit={handleSubmit} className='form-container'>
                 <h1 className="center">Create a new topic</h1>
                 <div className="form-section">

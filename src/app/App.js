@@ -18,20 +18,20 @@ import VocabularySets from "../features/vocabularySets/VocabularySets";
 export default function App () {
   return (
     <Router>
-      <nav>
+      <nav data-testid="navbar">
         <ul>
           <li>
             <NavLink to={ROUTES.topicsRoute()} activeClassName="active">Topics</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.vocabularySetsRoute()} activeClassName="active" name='vocs'>Practice sets</NavLink>
+            <NavLink to={ROUTES.vocabularySetsRoute()} activeClassName="active" data-testid="practice-link" type='button'>Practice sets</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.createNewVocabularySetRoute()} activeClassName="active">Create new vocabulary set</NavLink>
+            <NavLink to={ROUTES.createNewVocabularySetRoute()} activeClassName="active" data-testid="newSet-link">Create new vocabulary set</NavLink>
           </li>
         </ul>
       </nav>
-      <h3>To start click on Topics</h3>
+
       <Switch>
         <Route path="/topics">
           <TopicsRoutes />

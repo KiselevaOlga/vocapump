@@ -1,0 +1,19 @@
+.card-section{
+    flex: auto;
+    list-style: none;
+    padding: 0;
+    margin-right: 40px;
+}
+
+.card-front{
+    background: #501F3A;
+    height: 100px;
+    width: 100%;
+    justify-content: space;
+}
+ 
+.card-back{
+    background: #14A098;
+    height: 100px;
+    width: 100%;
+}

@@ -1,18 +1,29 @@
 import React, { useState } from 'react';
 import {useSelector} from 'react-redux';
 import {selectCards} from './cardsSlice';
-
+import "./Card.css";
+import ReactCardFlip from 'react-card-flip';
 
 export default function Card ({id}) {
     const cards = useSelector(selectCards);
     const card = cards[id];
-    const [flipped, setFlipped] = useState(false)
+    const [isFlipped, setIsFlipped] = useState(false)
+
+    const handleClick =(e)=>{
+        e.preventDefault();
+        setIsFlipped(!isFlipped)
+    }
 
     return (
-        <li>
-            <button onClick={(e)=>setFlipped(!flipped)} className="card">
-                {flipped ? card.word : card.translation}
-            </button>
+        <li className='card-section'>
+            <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
+                <div onClick={handleClick} className='card-front'>
+                    <p>{card.word}</p>
+                </div>
+                <div onClick={handleClick} className='card-back'>
+                    <p>{card.translation}</p>
+                </div>
+            </ReactCardFlip>
         </li>
     )
 }

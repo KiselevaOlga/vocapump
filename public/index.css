@@ -1,7 +1,23 @@
-
+/*
+background(dark green) : #0F292F
+BACKGROUND 2 (DARK BERRY): #501F3A
+TEXT(IVORY WHITE RO WHITE): #CCCCCC OR #FFFFFF
+NAVBAR(BERRY PINK): #CB296F
+ACCENTS (TEAL BLUE): #14A098 
+*/
+* {
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
+  
+html, 
+body{
+    background: #0F292F;
+    margin: 0; /*full width of navabr*/
+}
 nav {
     display: flex;
-    background: blue;
+    background: #CB296F;
     padding: 20px 20px;
 }
 nav ul {
@@ -9,10 +25,11 @@ nav ul {
     justify-content: space-around;
     list-style: none;
     width: 100%;
+    
 }
 nav a {
     text-decoration: none;
-    color: white;
+    color: #FFFFFF;
 }
 
 .center {

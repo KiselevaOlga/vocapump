@@ -5,6 +5,7 @@ import {useHistory} from 'react-router-dom';
 import { v4 as uuidv4 } from "uuid";
 import {ALL_ICONS} from '../assets/icons';
 import {addTopic} from '../features/topics/topicsSlice';
+import './NewForm.css';
 
 export default function NewTopicForm () {
     const [name, setName] = useState("");
@@ -28,7 +29,6 @@ export default function NewTopicForm () {
     }
     return (
         <section>
-         <h2>Hello</h2>
             <form onSubmit={handleSubmit} className='form-container'>
                 <h1 className="center">Create a new topic</h1>
                 <div className="form-section">
@@ -56,7 +56,7 @@ export default function NewTopicForm () {
                         ))}
                     </select>
                 </div>
-                <button className="center submit-btn">Add topic</button>
+                <button className="center submit btn">Add topic</button>
             </form>
         </section>
     )

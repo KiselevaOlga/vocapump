@@ -15,12 +15,12 @@ export default function Card ({id}) {
     }
 
     return (
-        <li className='card-section'>
+        <li className='card-section center'>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
-                <div onClick={handleClick} className='card-front'>
+                <div onClick={handleClick} className='card-box card-front'>
                     <p>{card.word}</p>
                 </div>
-                <div onClick={handleClick} className='card-back'>
+                <div onClick={handleClick} className='card-box card-back'>
                     <p>{card.translation}</p>
                 </div>
             </ReactCardFlip>

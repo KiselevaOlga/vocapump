@@ -5,15 +5,20 @@
     margin-right: 40px;
 }
 
-.card-front{
-    background: #501F3A;
+.card-box{
     height: 100px;
     width: 100%;
     justify-content: space;
+    border-radius: 5px;
+}
+.card-front{
+    background: #CCCCCC;
 }
  
 .card-back{
     background: #14A098;
-    height: 100px;
-    width: 100%;
+}
+p{
+    padding-top: 40px;
+    font-size: 20px;
 }

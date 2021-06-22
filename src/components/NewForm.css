@@ -1,0 +1,32 @@
+.form-container{
+    color: #FFFFFF;
+    cursor: pointer;
+}
+h1 {
+    font-size: 20px;
+    padding: 20px;
+    border-bottom: 2px solid #CCCCCC;
+    transition: border-bottom 0.5s;
+    text-shadow: 3px 3px 3px #14A098;
+    
+}
+
+input, select{
+    background: #CCCCCC;
+    border-color: #CB296F;
+}
+
+input:focus, select:focus{
+    outline-color: #14A098;
+}
+
+.side-btn {
+    width: 20%;
+    background: #14A098;
+    height: 35px;
+    border-radius: 5px;
+    border-color: #CB296F;
+}
+.side-btn:hover{
+    color: #FFFFFF;
+}

@@ -20,8 +20,8 @@ export default function App () {
     <Router>
       <nav data-testid="navbar">
         <ul>
-          <li>
-            <NavLink to={ROUTES.topicsRoute()} activeClassName="active" data-testid="newTopic-link">Topics</NavLink>
+          <li className="link-box">
+            <NavLink to={ROUTES.topicsRoute()} activeClassName="active" data-testid="newTopic-link" className="in-link">Topics</NavLink>
           </li>
           <li>
             <NavLink to={ROUTES.vocabularySetsRoute()} activeClassName="active" data-testid="practice-link" type='button'>Practice sets</NavLink>

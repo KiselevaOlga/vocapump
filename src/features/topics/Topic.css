@@ -1,0 +1,27 @@
+.topics-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none;
+    margin-right: 40px;
+}
+
+.item-box{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 20%;
+    background-color:rgba(255, 255, 255, 0.5);
+}
+
+.topic-link{
+    text-decoration: none;
+}
+
+.icon-img{
+    width: 40px;
+}
+

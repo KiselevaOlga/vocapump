@@ -14,6 +14,7 @@ h1 {
 input, select{
     background: #CCCCCC;
     border-color: #CB296F;
+    border-radius: 5px;
 }
 
 input:focus, select:focus{

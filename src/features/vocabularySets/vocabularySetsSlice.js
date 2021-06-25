@@ -8,6 +8,9 @@ export const vocabularySetsSlice = createSlice({
         addVocabularySet: (state, action)=>{
             const {id}=action.payload;
             state.vocabularySets[id] = action.payload;
+        },
+        removeSet: (state, action)=>{
+            delete state.vocabularySets[action.payload]
         }
     }
 })
@@ -20,5 +23,5 @@ export const addVocabularySetForTopicID = (vocabularySet)=>{
     }
 }
 export const selectVocabularySets = (state)=>state.vocabularySets.vocabularySets;
-export const {addVocabularySet} = vocabularySetsSlice.actions;
+export const {addVocabularySet, removeSet} = vocabularySetsSlice.actions;
 export default vocabularySetsSlice.reducer;

@@ -22,14 +22,19 @@ input:focus, select:focus{
 }
 
 .side-btn {
-    display: inline-block;
     width: 20%;
-    background: #da450a;
+    background: rgb(1, 124, 77);
     height: 35px;
     border-radius: 5px;
     border-color: #CB296F;
+    margin-left: 10px;
+    margin-bottom: 5px;
 }
 
+.remove-btn{
+    background: rgb(223, 7, 7) !important;
+    border-color: #da450a !important;
+}
 
 .side-btn:hover{
     color: #FFFFFF;

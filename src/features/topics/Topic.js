@@ -7,11 +7,8 @@ import {selectVocabularySets} from '../vocabularySets/vocabularySetsSlice';
 export default function Topic () {
     const topics = useSelector(selectTopics);
     const vocabularySets = useSelector(selectVocabularySets);
-    console.log('Here are topics',topics)
     let {topicID} = useParams();
-    console.log('Hey its topicID', topicID)
     const topic = topics[topicID];
-    console.log('Topic', topic)
     const vocabularySetsForTopic = topic.vocabularySetIDs.map(vocabularySetID => vocabularySets[vocabularySetID])
 
     return (

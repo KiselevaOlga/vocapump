@@ -23,11 +23,13 @@
 
 .set-name{
     padding-bottom: 5vh;
-    /* text-align: center; */
-    /* padding-left: 5vh; */
+    text-decoration: none;
     margin: 5px;
+    color: #FFFFFF;
 }
-
+.set-link{
+    text-decoration: none;
+}
 .cards{
     position: absolute;
     bottom: 5px;
@@ -40,4 +42,20 @@
     text-decoration: none;
     letter-spacing: 1px;
     border: 1px solid #CB296F;
+}
+
+.set-delete-btn{
+    float: right;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #CB296F;
+    background: #ff8800;
+    font-weight: bold;
+    padding: 0px;
+    transition: all 0.5s;
+    margin: 10px;
+}
+.set-delete-btn:hover{
+    color: #FFFFFF;
+    background: red;
 }

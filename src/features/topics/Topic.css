@@ -38,7 +38,6 @@ h1, h3, p{
 
 .name{
     padding-bottom: 5vh;
-    /* text-align: center; */
 }
 
 .sets{
@@ -53,4 +52,19 @@ h1, h3, p{
     text-decoration: none;
     letter-spacing: 1px;
     border: 1px solid #CB296F;
+}
+
+.delete-btn{
+    float: right;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #CB296F;
+    background: #ff8800;
+    font-weight: bold;
+    padding: 0px;
+    transition: all 0.5s;
+}
+.delete-btn:hover{
+    color: #FFFFFF;
+    background: red;
 }

@@ -100,7 +100,7 @@ export default function NewVocabularySetForm () {
                                     updateCardState(index, 'translation', e.currentTarget.value)
                                 }}
                             ></input>  
-                            <button className="side-btn" onClick={(e)=>removeCard(e, index)}>Remove card</button>                      
+                            <button className="remove-btn side-btn" onClick={(e)=>removeCard(e, index)}>Remove card</button>                      
                         </div>
                     ))}        
 

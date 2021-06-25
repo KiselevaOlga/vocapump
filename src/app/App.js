@@ -65,6 +65,7 @@ function TopicsRoutes () {
         <Route path={`${match.path}/new`}>
           <NewTopicForm />
         </Route>
+       
         <Route path={`${match.path}/:topicID`}>
           <Topic />
         </Route>

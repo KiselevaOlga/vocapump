@@ -23,10 +23,14 @@ export const topicsSlice = createSlice({
         addVocabularySetIDForTopic: (state, action) => {
             const {topicID, vocabularySetID} = action.payload;
             state.topics[topicID].vocabularySetIDs.push(vocabularySetID);
+        },
+        removeVocabularySetIDForTopic: (state, action)=>{
+            const {topicID, vocabularySetID} = action.payload;
+            delete state.topics[topicID].vocabularySetIDs[vocabularySetID];
         }
     }
 })
 
-export const { addTopic, removeTopic, addVocabularySetIDForTopic } = topicsSlice.actions;
+export const { addTopic, removeTopic, addVocabularySetIDForTopic, removeVocabularySetIDForTopic} = topicsSlice.actions;
 export const selectTopics = (state) => {return state.topics.topics};
 export default topicsSlice.reducer;

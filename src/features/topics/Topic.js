@@ -13,14 +13,26 @@ export default function Topic () {
 
     return (
         <section>
-            <h1 className='center'>Topic <br></br> {topic.name}</h1>
+            <h1 className='center'>Topic: <br></br> {topic.name}</h1>
             <ul className="topics-list">
                 {vocabularySetsForTopic.map(set => (
+                    <div>
+                    {set === undefined 
+                    ? (<h3 className='center item-box'>The set has been deleted</h3>)
+                    : (
                     <li key={set.id} className="item-box">
-                        <Link to={ROUTES.vocabularySetRoute(set.id)} className="topic-link">
-                            <p className='center'>{set.name}</p> 
+                    <Link to={ROUTES.vocabularySetRoute(set.id)} className="topic-link">
+                            <p className='center name'>{set.name}</p> 
+                            <p className='center sets'>
+                                {set.cardIDs.length}{set.cardIDs.length===1 ? ' Card' : ' Cards'}
+                            </p>
                          </Link>
-                    </li>
+                    </li>                         
+                    )
+                    }
+                       
+                    </div>
+
                 ))}
             </ul>
             <Link 

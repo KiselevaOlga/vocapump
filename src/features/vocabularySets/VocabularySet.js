@@ -13,11 +13,21 @@ export default function VocabularySet () {
     return (
         <section>
             <ul>
+            {vocabularySet.cardIDs.length === 0 
+            ? (
+                <Link 
+                    to={ROUTES.createNewVocabularySetRoute()} 
+                    className="center btn button">
+                    Add cards to a vocabulary set
+                </Link>
+            )
+            : (<Link to={ROUTES.vocabularySetsRoute()} className='center button btn'>Back to vocabulary sets</Link>)
+            }
                 {vocabularySet.cardIDs.map(id => (
                     <Card key={id} id={id}/>
                 ))}
             </ul>
-            <Link to={ROUTES.vocabularySetsRoute()} className='center button btn'>Back to vocabulary sets</Link>
+            
         </section>
     )
 }

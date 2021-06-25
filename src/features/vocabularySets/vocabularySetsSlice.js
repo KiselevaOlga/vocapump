@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {addVocabularySetIDForTopic} from '../topics/topicsSlice';
+import {addVocabularySetIDForTopic, removeVocabularySetIDForTopic} from '../topics/topicsSlice';
 
 export const vocabularySetsSlice = createSlice({
     name: 'vocabularySets',
@@ -20,6 +20,14 @@ export const addVocabularySetForTopicID = (vocabularySet)=>{
     return (dispatch)=>{
         dispatch(vocabularySetsSlice.actions.addVocabularySet(vocabularySet));
         dispatch(addVocabularySetIDForTopic({topicID: topicID, vocabularySetID: id}))
+    }
+}
+
+export const removeVocabularySetForTopicID = (vocabularySet)=>{
+    const {topicID, id} = vocabularySet;
+    return (dispatch)=>{
+        dispatch(vocabularySetsSlice.actions.removeSet(vocabularySet));
+        dispatch(removeVocabularySetIDForTopic({topicID: topicID, vocabularySetID: id}))
     }
 }
 export const selectVocabularySets = (state)=>state.vocabularySets.vocabularySets;

@@ -21,7 +21,7 @@ export default function Topic () {
                 {vocabularySetsForTopic.map(set => (
                     <li key={set.id} className="item-box">
                         <Link to={ROUTES.vocabularySetRoute(set.id)} className="topic-link">
-                            <p>{set.name}</p> 
+                            <p className='center'>{set.name}</p> 
                          </Link>
                     </li>
                 ))}

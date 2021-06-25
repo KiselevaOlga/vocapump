@@ -5,7 +5,8 @@ import {
   Switch,
   Route,
   NavLink,
-  useRouteMatch
+  useRouteMatch,
+  Redirect
 } from "react-router-dom";
 import ROUTES from './routes';
 import NewTopicForm from "../components/NewTopicForm";
@@ -44,6 +45,7 @@ export default function App () {
       </nav>
 
       <Switch>
+        <Redirect exact from="/" to="/topics" />
         <Route path="/topics">
           <TopicsRoutes />
         </Route>

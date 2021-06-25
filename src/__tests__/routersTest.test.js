@@ -28,14 +28,26 @@ const renderWithRouter = (component) => {
 //     expect(screen.getByText(/Topics/)).toBeInTheDocument()
 // })
 
+// it('should render full app', () => {
+
+//   const { container, getByTestId } = renderWithRouter(<App />) 
+//   const navbar = getByTestId('navbar')
+//   const link = getByTestId('practice-link')
+
+//   expect(container.innerHTML).toMatch('Create new vocabulary set')
+//   expect(navbar).toContainElement(link)
+// })
 it('should render full app', () => {
 
-  const { container, getByTestId } = renderWithRouter(<App />) 
-  const navbar = getByTestId('navbar')
-  const link = getByTestId('practice-link')
+    const initialState = {topics:{topics:0}}
+    const mockStore = configureStore();
+    let store = mockStore(initialState)
+    const { container, getByTestId } = renderWithRouter(<Provider store={store}><App /></Provider>)   
+    const navbar = getByTestId('navbar')
+    const link = getByTestId('practice-link')
 
-  expect(container.innerHTML).toMatch('Create new vocabulary set')
-  expect(navbar).toContainElement(link)
+    expect(container.innerHTML).toMatch('Create new vocabulary set')
+    expect(navbar).toContainElement(link)
 })
 
 it('should navigate to the topics page when you click Topics navLink', ()=> {

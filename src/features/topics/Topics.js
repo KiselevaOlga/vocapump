@@ -14,9 +14,11 @@ export default function Topics () {
                     <li key={topic.id} className="item-box">
                         <Link to={ROUTES.topicRoute(topic.id)} className="topic-link">
                             <div>
-                                <img src={topic.icon} alt={topic.icon.name} className="icon-img"/>
-                                <h3>{topic.name}</h3>
-                                <p>{topic.vocabularySetIDs.length} Sets</p>
+                                <img src={topic.icon} alt={topic.icon.name} className="icon-img center"/>
+                                <p className='center name'>{topic.name}</p>
+                                <p className="center sets">
+                                {topic.vocabularySetIDs.length}{topic.vocabularySetIDs.length===1 ? " Set" : ' Sets' }
+                                </p>
                             </div>
                         </Link>
                     </li>
@@ -24,9 +26,9 @@ export default function Topics () {
             </ul>
             <Link 
             to={ROUTES.newTopicRoute()} 
-            className="center button create-new-topic-btn" 
+            className="center btn button" 
             title="Click to create new topic">
-                Create new topic
+                 Create new topic
             </Link>
         </section>
 

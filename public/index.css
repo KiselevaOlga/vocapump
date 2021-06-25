@@ -5,6 +5,7 @@ TEXT(IVORY WHITE RO WHITE): #CCCCCC OR #FFFFFF
 NAVBAR(BERRY PINK): #CB296F
 ACCENTS (TEAL BLUE): #14A098 
 */
+
 * {
     font-family: "Open Sans", sans-serif;
     box-sizing: border-box;
@@ -13,12 +14,14 @@ ACCENTS (TEAL BLUE): #14A098
   
 html, 
 body{
-    background: #0F292F;
+    background: #00152b;
     margin: 0; /*full width of navabr*/
 }
 nav {
     display: flex;
     background: #CB296F;
+    background-image: url('./background2.png');
+    background-repeat: repeat;
     padding: 20px 20px;
     border-bottom: 5px solid #501F3A;
 }
@@ -33,6 +36,8 @@ nav a {
     text-decoration: none;
     color: #FFFFFF;
     transition: font-size 0.5s ease;
+    letter-spacing: 1px;
+    font-size: 18px;
 }
 nav a:hover{
     font-size: 20px;
@@ -63,19 +68,21 @@ select {
 }
 
 .btn{
-    border-radius: 5px;
+    border-radius: 8px;
     width: 30%;
     height: 35px;
-    background: #14A098;
+    background: #da450a;
     color: #FFFFFF;
     text-shadow: 1px 1px 1px #CB296F;
-    border-color: #CB296F;
+    border-color: 2px solid #da450a;
     transition: all 0.5s;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.322);
 }
 .btn:hover{
     width: 32%;
     height: 42px;
     text-shadow: 2px 2px 2px #CB296F;
-    font-size: 20px
+    font-size: 20px;
+    box-shadow: 0px 5px 15px rgba(250, 49, 49, 0.808);
 }
 

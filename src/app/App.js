@@ -21,13 +21,24 @@ export default function App () {
       <nav data-testid="navbar">
         <ul>
           <li className="link-box">
-            <NavLink to={ROUTES.topicsRoute()} activeClassName="active" data-testid="newTopic-link" className="in-link">Topics</NavLink>
+            <NavLink to={ROUTES.topicsRoute()} 
+              activeClassName="active" 
+              data-testid="newTopic-link" 
+              className="in-link">
+            Topics</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.vocabularySetsRoute()} activeClassName="active" data-testid="practice-link" type='button'>Practice sets</NavLink>
+            <NavLink to={ROUTES.vocabularySetsRoute()} 
+              activeClassName="active" 
+              data-testid="practice-link" 
+              type='button'>
+            Practice sets</NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.createNewVocabularySetRoute()} activeClassName="active" data-testid="newSet-link">Create new vocabulary set</NavLink>
+            <NavLink to={ROUTES.createNewVocabularySetRoute()} 
+              activeClassName="active" 
+              data-testid="newSet-link">
+            Create new vocabulary set</NavLink>
           </li>
         </ul>
       </nav>

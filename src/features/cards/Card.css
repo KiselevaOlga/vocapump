@@ -10,13 +10,14 @@
     width: 100%;
     justify-content: space;
     border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.322);
 }
 .card-front{
-    background: #CCCCCC;
+    background: #da450a;
 }
  
 .card-back{
-    background: #14A098;
+    background: #CB296F;
 }
 p{
     padding-top: 40px;

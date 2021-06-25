@@ -86,6 +86,7 @@ export default function NewVocabularySetForm () {
                                 placeholder="Word" 
                                 value={cards[index].word} 
                                 id={`word-${index}`}
+                                required
                                 onChange={(e)=>{
                                     updateCardState(index, 'word', e.currentTarget.value)
                                 }}
@@ -94,6 +95,7 @@ export default function NewVocabularySetForm () {
                                 placeholder="Translation" 
                                 value={cards[index].translation}
                                 id={`translation-${index}`}
+                                required
                                 onChange={(e)=>{
                                     updateCardState(index, 'translation', e.currentTarget.value)
                                 }}

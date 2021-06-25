@@ -16,18 +16,20 @@ export default function Topic () {
 
     return (
         <section>
-            <h1 className='center'>Topic {topic.name}</h1>
-            <ul>
+            <h1 className='center'>Topic <br></br> {topic.name}</h1>
+            <ul className="topics-list">
                 {vocabularySetsForTopic.map(set => (
-                    <li key={set.id} className="set">
-                        <Link to={ROUTES.vocabularySetRoute(set.id)}> {set.name} </Link>
+                    <li key={set.id} className="item-box">
+                        <Link to={ROUTES.vocabularySetRoute(set.id)} className="topic-link">
+                            <p>{set.name}</p> 
+                         </Link>
                     </li>
                 ))}
             </ul>
             <Link 
             to={ROUTES.createNewVocabularySetRoute()} 
             title="Click to create a new vocabulary set"
-            className="center button create-new-topic-btn"
+            className="center button btn"
             >Create a new vocabulary set</Link>
         </section>
     )

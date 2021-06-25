@@ -5,9 +5,9 @@
 h1 {
     font-size: 20px;
     padding: 20px;
-    border-bottom: 2px solid #CCCCCC;
+    border-bottom: 2px solid #ec0062;
     transition: border-bottom 0.5s;
-    text-shadow: 3px 3px 3px #14A098;
+    text-shadow: 3px 3px 3px #CB296F;
     
 }
 
@@ -18,16 +18,19 @@ input, select{
 }
 
 input:focus, select:focus{
-    outline-color: #14A098;
+    outline-color: #e2c440;
 }
 
 .side-btn {
+    display: inline-block;
     width: 20%;
-    background: #14A098;
+    background: #da450a;
     height: 35px;
     border-radius: 5px;
     border-color: #CB296F;
 }
+
+
 .side-btn:hover{
     color: #FFFFFF;
 }

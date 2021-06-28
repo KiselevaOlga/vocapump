@@ -17,8 +17,12 @@ input, select{
     border-radius: 5px;
 }
 
+
+
 input:focus, select:focus{
     outline-color: #e2c440;
+    background: #CCCCCC;
+
 }
 
 .side-btn {

@@ -1,21 +1,30 @@
 import {Link} from 'react-router-dom';
 import ROUTES from '../../app/routes';
 import {useSelector, useDispatch} from 'react-redux';
-import {selectVocabularySets, removeSet} from './vocabularySetsSlice';
+import {selectVocabularySets, removeSet, removeVocabularySetForTopicID} from './vocabularySetsSlice';
 import './VocabularySet.css';
 
 export default function VocabularySets () {
     const vocabularySets = useSelector(selectVocabularySets);
     const dispatch = useDispatch()
-
+    console.log('sets!! ',vocabularySets)
+    
     return (
         <section>
             <h1 className="center">Vocabulary sets</h1>
            
             <ul className='sets-list'>
-                {Object.values(vocabularySets).map((set) => (
-                    <li className='set-box'>
-                        <button onClick={()=>{dispatch(removeSet(set.id))}} className="set-delete-btn">X</button>
+                {Object.values(vocabularySets).map((set, index) => (
+                    <li className='set-box' key={set.id}>
+                    {/* it has topicID but topicid already deleted */}
+                        <button 
+                            onClick={()=>{
+                                dispatch(removeVocabularySetForTopicID({topicID: set.topicID, index: index}))
+                                dispatch(removeSet(set.id))
+                                }} 
+                            className="set-delete-btn">
+                            X
+                        </button>
                         <Link key={set.id} to={ROUTES.vocabularySetRoute(set.id)} className='set-link'>
                             <p className='center set-name'>{set.name}</p>
                             <p className='center cards'>

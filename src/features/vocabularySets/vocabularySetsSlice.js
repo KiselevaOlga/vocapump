@@ -24,10 +24,9 @@ export const addVocabularySetForTopicID = (vocabularySet)=>{
 }
 
 export const removeVocabularySetForTopicID = (vocabularySet)=>{
-    const {topicID, id} = vocabularySet;
+    const {topicID, index} = vocabularySet;
     return (dispatch)=>{
-        dispatch(vocabularySetsSlice.actions.removeSet(vocabularySet));
-        dispatch(removeVocabularySetIDForTopic({topicID: topicID, vocabularySetID: id}))
+        dispatch(removeVocabularySetIDForTopic({topicID: topicID, vocabularySetIndex: index}))
     }
 }
 export const selectVocabularySets = (state)=>state.vocabularySets.vocabularySets;

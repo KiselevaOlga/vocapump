@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {removeSet} from '../vocabularySets/vocabularySetsSlice';
 
 export const initialState = {
     topics: {}
@@ -25,12 +26,24 @@ export const topicsSlice = createSlice({
             state.topics[topicID].vocabularySetIDs.push(vocabularySetID);
         },
         removeVocabularySetIDForTopic: (state, action)=>{
-            const {topicID, vocabularySetID} = action.payload;
-            delete state.topics[topicID].vocabularySetIDs[vocabularySetID];
+            const {topicID, vocabularySetIndex} = action.payload;
+            delete state.topics[topicID].vocabularySetIDs[vocabularySetIndex];
+        }, 
+        removeSetsOfTopic: (state, action)=>{
+            for(let i = 0; i < state.topics[action.payload].vocabularySetIDs.length; i++){
+                delete state.topics[action.payload].vocabularySetIDs[i]
+            }
         }
     }
 })
 
-export const { addTopic, removeTopic, addVocabularySetIDForTopic, removeVocabularySetIDForTopic} = topicsSlice.actions;
+export const removeAllSets = (topic) =>{
+    return (dispatch)=>{
+        dispatch(topicsSlice.actions.removeSetsOfTopic(topic))
+        dispatch(removeTopic(topic))
+    }
+}
+
+export const { addTopic, removeTopic, addVocabularySetIDForTopic, removeVocabularySetIDForTopic, removeSetsOfTopic} = topicsSlice.actions;
 export const selectTopics = (state) => {return state.topics.topics};
 export default topicsSlice.reducer;

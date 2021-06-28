@@ -16,7 +16,7 @@ export default function Topic () {
             <h1 className='center'>Topic: <br></br> {topic.name}</h1>
             <ul className="topics-list">
                 {vocabularySetsForTopic.map(set => (
-                    <div>
+                    <>
                     {set === undefined 
                     ? (<h3 className='center item-box'>The set has been deleted</h3>)
                     : (
@@ -31,7 +31,7 @@ export default function Topic () {
                     )
                     }
                        
-                    </div>
+                    </>
 
                 ))}
             </ul>

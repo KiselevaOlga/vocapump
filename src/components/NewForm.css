@@ -2,6 +2,7 @@
     color: #FFFFFF;
     cursor: pointer;
 }
+
 h1 {
     font-size: 20px;
     padding: 20px;
@@ -16,8 +17,6 @@ input, select{
     border-color: #CB296F;
     border-radius: 5px;
 }
-
-
 
 input:focus, select:focus{
     outline-color: #e2c440;
@@ -42,4 +41,10 @@ input:focus, select:focus{
 
 .side-btn:hover{
     color: #FFFFFF;
+}
+
+@media screen and (max-width: 500px){
+    .side-btn {
+        width: 50%;
+    }
 }

@@ -21,7 +21,7 @@ export default function App () {
     <Router>
       <nav data-testid="navbar">
         <ul>
-          <li className="link-box">
+          <li>
             <NavLink to={ROUTES.topicsRoute()} 
               activeClassName="active" 
               data-testid="newTopic-link" 
@@ -35,10 +35,11 @@ export default function App () {
               type='button'>
             Practice sets</NavLink>
           </li>
-          <li>
+          <li className="link-box">
             <NavLink to={ROUTES.createNewVocabularySetRoute()} 
               activeClassName="active" 
-              data-testid="newSet-link">
+              data-testid="newSet-link"
+              className="new-link">
             Create new vocabulary set</NavLink>
           </li>
         </ul>

@@ -30,7 +30,7 @@ nav ul {
     justify-content: space-around;
     list-style: none;
     width: 100%;
-    
+    word-wrap: break-word;  
 }
 nav a {
     text-decoration: none;
@@ -38,6 +38,8 @@ nav a {
     transition: font-size 0.5s ease;
     letter-spacing: 1px;
     font-size: 18px;
+    flex-basis: 0;
+    flex-grow: 1;
 }
 nav a:hover{
     font-size: 20px;
@@ -86,3 +88,40 @@ select {
     box-shadow: 0px 5px 15px rgba(250, 49, 49, 0.808);
 }
 
+@media screen and (max-width: 630px){
+    .btn{
+        width: 50%;
+    }
+    .card input {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+        padding: 0px 0px;
+        width: 100%;
+        margin-bottom: 0px;
+        justify-content: center;
+
+    }
+    nav li{
+        margin-bottom: 10px;
+    }
+    .btn{
+        width: 80%;
+    }
+    input,
+    select {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        padding: 10px 10px;
+    }
+    .card input {
+        width: 80%;
+    }
+}
+}

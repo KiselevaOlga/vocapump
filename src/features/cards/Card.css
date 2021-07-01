@@ -2,7 +2,7 @@
     flex: auto;
     list-style: none;
     padding: 0;
-    margin-right: 40px;
+    margin-right: 60px;
 }
 
 .card-box{
@@ -22,4 +22,11 @@
 p{
     padding-top: 40px;
     font-size: 20px;
+}
+
+@media screen and (max-width: 800px){
+    .card-section{
+        margin-right: 40px;
+    }
+    
 }

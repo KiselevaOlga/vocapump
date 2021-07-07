@@ -10,7 +10,7 @@ export const vocabularySetsSlice = createSlice({
             state.vocabularySets[id] = action.payload;
         },
         removeSet: (state, action)=>{
-            delete state.vocabularySets[action.payload]
+            delete state.vocabularySets[action.payload];          
         }
     }
 })

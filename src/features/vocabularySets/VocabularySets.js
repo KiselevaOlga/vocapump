@@ -16,7 +16,6 @@ export default function VocabularySets () {
             <ul className='sets-list'>
                 {Object.values(vocabularySets).map((set, index) => (
                     <li className='set-box' key={set.id}>
-                    {/* it has topicID but topicid already deleted */}
                         <button 
                             onClick={()=>{
                                 dispatch(removeVocabularySetForTopicID({topicID: set.topicID, index: index}))

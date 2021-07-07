@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {removeSet} from '../vocabularySets/vocabularySetsSlice';
+// import {removeSet} from '../vocabularySets/vocabularySetsSlice';
 
 export const initialState = {
     topics: {}
@@ -25,13 +25,25 @@ export const topicsSlice = createSlice({
             const {topicID, vocabularySetID} = action.payload;
             state.topics[topicID].vocabularySetIDs.push(vocabularySetID);
         },
+        // when deleting first item in array it doesnt shrink the array
         removeVocabularySetIDForTopic: (state, action)=>{
             const {topicID, vocabularySetIndex} = action.payload;
-            delete state.topics[topicID].vocabularySetIDs[vocabularySetIndex];
+            // splice(0, 1)
+            if(state.topics[topicID] !== undefined){
+                // delete state.topics[topicID].vocabularySetIDs[vocabularySetIndex];
+                if(vocabularySetIndex === 0){
+                    state.topics[topicID].vocabularySetIDs.splice(0,1)
+                } else {
+                    state.topics[topicID].vocabularySetIDs.splice(vocabularySetIndex,vocabularySetIndex)
+                }
+            } else {
+                return
+            }
+            
         }, 
         removeSetsOfTopic: (state, action)=>{
             for(let i = 0; i < state.topics[action.payload].vocabularySetIDs.length; i++){
-                delete state.topics[action.payload].vocabularySetIDs[i]
+                delete state.topics[action.payload].vocabularySetIDs[i];
             }
         }
     }

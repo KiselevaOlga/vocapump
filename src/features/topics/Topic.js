@@ -10,7 +10,7 @@ export default function Topic () {
     let {topicID} = useParams();
     const topic = topics[topicID];
     const vocabularySetsForTopic = topic.vocabularySetIDs.map(vocabularySetID => vocabularySets[vocabularySetID])
-
+    console.log('Topic: ', topic)
     return (
         <section>
             <h1 className='center'>Topic: <br></br> {topic.name}</h1>

@@ -1,7 +1,7 @@
 import ROUTES from "../../app/routes";
 import {Link} from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux';
-import {selectTopics, removeAllSets, removeSetsOfTopic} from './topicsSlice';
+import {selectTopics, removeAllSets} from './topicsSlice';
 import './Topic.css';
 
 export default function Topics () {
@@ -17,7 +17,6 @@ export default function Topics () {
                         <button 
                             onClick={()=>{
                                 dispatch(removeAllSets(topic.id))
-                                // dispatch(removeTopic(topic.id))
                                 }} 
                             className="delete-btn">
                             X

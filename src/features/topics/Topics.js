@@ -1,13 +1,13 @@
 import ROUTES from "../../app/routes";
 import {Link} from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux';
-import {selectTopics, removeAllSets} from './topicsSlice';
+import {selectTopics, removeTopic} from './topicsSlice';
 import './Topic.css';
 
 export default function Topics () {
     const topics = useSelector(selectTopics)
     const dispatch = useDispatch();
-    console.log('Topics!! ', topics)
+    
     return (
         <section>
             <h1 className="center">Topics</h1>
@@ -16,7 +16,7 @@ export default function Topics () {
                     <li key={topic.id} className="item-box">
                         <button 
                             onClick={()=>{
-                                dispatch(removeAllSets(topic.id))
+                                dispatch(removeTopic(topic.id))
                                 }} 
                             className="delete-btn">
                             X

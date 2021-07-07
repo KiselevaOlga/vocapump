@@ -34,5 +34,6 @@ describe('topicsSlice', ()=>{
         }}};
         const result = {1: testState}
         Selector(selectTopics).expect(nextState).toReturn(result);
-    })
+    });
+
 })

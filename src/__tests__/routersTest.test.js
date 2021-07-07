@@ -7,9 +7,7 @@ import '@testing-library/jest-dom/extend-expect'
 import App from '../app/App';
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux';
-import { Route, Link } from "react-router-dom";
-import { act } from 'react-dom/test-utils';
-
+import { Route } from "react-router-dom";
 
 const renderWithRouter = (component) => {
     const history = createMemoryHistory()

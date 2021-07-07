@@ -1,9 +1,13 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {addVocabularySetIDForTopic, removeVocabularySetIDForTopic} from '../topics/topicsSlice';
 
+export const initialState = {
+    vocabularySets: {}
+}
+
 export const vocabularySetsSlice = createSlice({
     name: 'vocabularySets',
-    initialState: {vocabularySets: {}},
+    initialState: initialState,
     reducers: {
         addVocabularySet: (state, action)=>{
             const {id}=action.payload;

@@ -7,7 +7,6 @@ import './VocabularySet.css';
 export default function VocabularySets () {
     const vocabularySets = useSelector(selectVocabularySets);
     const dispatch = useDispatch()
-    console.log('sets!! ',vocabularySets)
     
     return (
         <section>

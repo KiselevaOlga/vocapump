@@ -1,16 +1,10 @@
 import vocabularySetsReducer from '../features/vocabularySets/vocabularySetsSlice';
-import {initialState, addVocabularySet, removeSet, addVocabularySetForTopicID} from '../features/vocabularySets/vocabularySetsSlice';
+import {initialState, addVocabularySet, removeSet} from '../features/vocabularySets/vocabularySetsSlice';
 import {addTopic, addVocabularySetIDForTopic} from '../features/topics/topicsSlice';
 import topicsReducer from '../features/topics/topicsSlice';
 import {initialState as topicsInitialState} from '../features/topics/topicsSlice';
 
 const testSet = {
-    id: 1,
-}
-const setWithCards = {
-    name: 'Kitchen',
-    topicID: 0,
-    cardIDs: [4, 5, 6],
     id: 1,
 }
 
@@ -44,3 +38,4 @@ describe('VocabularySetsSlice', ()=>{
         expect(updTopicsState.topics[0].vocabularySetIDs[0]).toEqual(vocabularySetState.vocabularySets[1].id)
     })
 })
+

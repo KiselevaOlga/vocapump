@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-// import {removeSet} from '../vocabularySets/vocabularySetsSlice';
 
 export const initialState = {
     topics: {}

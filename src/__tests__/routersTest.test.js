@@ -20,21 +20,7 @@ const renderWithRouter = (component) => {
   }
 }
 
-// it('full app rendering', () => {
-//     render(<App />, { wrapper: MemoryRouter })
 
-//     expect(screen.getByText(/Topics/)).toBeInTheDocument()
-// })
-
-// it('should render full app', () => {
-
-//   const { container, getByTestId } = renderWithRouter(<App />) 
-//   const navbar = getByTestId('navbar')
-//   const link = getByTestId('practice-link')
-
-//   expect(container.innerHTML).toMatch('Create new vocabulary set')
-//   expect(navbar).toContainElement(link)
-// })
 it('should render full app', () => {
 
     const initialState = {topics:{topics:0}}

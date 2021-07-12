@@ -1,7 +1,8 @@
 import {addVocabularySetForTopicID, removeVocabularySetForTopicID} from '../features/vocabularySets/vocabularySetsSlice';
 import {initialState, addVocabularySet} from '../features/vocabularySets/vocabularySetsSlice';
-import {addVocabularySetIDForTopic,removeVocabularySetIDForTopic} from '../features/topics/topicsSlice';
+import {addVocabularySetIDForTopic,removeVocabularySetIDForTopic, topicsInitialState, addTopic} from '../features/topics/topicsSlice';
 import vocabularySetsReducer from '../features/vocabularySets/vocabularySetsSlice';
+import topicsReducer from '../features/topics/topicsSlice';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
@@ -19,32 +20,37 @@ describe('VocabularySets thunk action creators', () => {
 
         store.dispatch(addVocabularySetForTopicID(sendPayload));
         const expectedActions = [addVocabularySet(sendPayload), addVocabularySetIDForTopic({topicID: 0, vocabularySetID: 1})];
-        console.log('my set store! ', store.getState())
+        
         expect(store.getActions()).toEqual(expectedActions);
     });
 
     it('dispatches removeVocabularySetIDForTopic when removeVocabularySetForTopicID called', ()=>{
+        const topicsState = topicsReducer(topicsInitialState, addTopic({
+            id: 0,
+            name: 'first',
+            icon: 'first icon',
+        }))
         const vocabularySetState = vocabularySetsReducer(initialState, addVocabularySet({
             name: 'First set',
             topicID: 0,
             cardIDs: [4, 5, 6],
-            id: 1,
+            id: 45,
         }));
         const updVocabularySetState = vocabularySetsReducer(vocabularySetState, addVocabularySet({
             name: 'Second set',
             topicID: 0,
             cardIDs: [7],
-            id: 2,
+            id: 56,
         }));
         const sendPayload = {
             topicID: 0,
-            vocabularySetIndex: 1
+            vocabularySetIndex: updVocabularySetState.vocabularySets[1]
         };
-        const store = mockStore(updVocabularySetState);
+        const store = mockStore({topicsState, updVocabularySetState});
+
         store.dispatch(removeVocabularySetForTopicID(sendPayload));
-        const expectedActions = [removeVocabularySetIDForTopic({topicID: 0,vocabularySetIndex: 1})];
-        console.log('my topic store! ', store.getState());
-        console.log('my state ', updVocabularySetState)
+        const expectedActions = [removeVocabularySetIDForTopic(sendPayload)];
+
         expect(store.getActions()).toEqual(expectedActions);
     })
 })

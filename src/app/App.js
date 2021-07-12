@@ -21,6 +21,9 @@ export default function App () {
     <Router>
       <nav data-testid="navbar">
         <ul>
+          <li className='app-name'>
+            VocaPump!
+          </li>
           <li>
             <NavLink to={ROUTES.topicsRoute()} 
               activeClassName="active" 

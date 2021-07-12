@@ -5,11 +5,13 @@ TEXT(IVORY WHITE RO WHITE): #CCCCCC OR #FFFFFF
 NAVBAR(BERRY PINK): #CB296F
 ACCENTS (TEAL BLUE): #14A098 
 */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@500&display=swap');
 
 * {
     font-family: "Open Sans", sans-serif;
     box-sizing: border-box;
     font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
   
 html, 
@@ -22,7 +24,7 @@ nav {
     background: #CB296F;
     background-image: url('./background2.png');
     background-repeat: repeat;
-    padding: 20px 20px;
+    padding-top: 15px;
     border-bottom: 5px solid #501F3A;
 }
 nav ul {
@@ -44,6 +46,16 @@ nav a {
 nav a:hover{
     font-size: 20px;
 }
+ 
+.app-name{
+    font-size: 25px;
+    letter-spacing: 3px;
+    color: #ffe600;
+    font-family: 'Fredoka One', cursive !important;    
+    text-shadow: 2px 4px 1px rgba(236, 75, 169, 0.692);
+    padding-bottom: 5px;
+}
+
 .center {
     display: block;
     text-align: center;

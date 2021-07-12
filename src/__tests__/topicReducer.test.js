@@ -2,12 +2,10 @@ import {
     initialState, 
     addTopic, 
     removeTopic, 
-    selectTopics, 
     addVocabularySetIDForTopic,
     removeVocabularySetIDForTopic
 } from '../features/topics/topicsSlice';
 import topicsReducer from '../features/topics/topicsSlice';
-import { Selector } from 'redux-testkit';
 
 const testState = {
     id: 1,
@@ -80,18 +78,6 @@ describe('topicsSlice', ()=>{
             vocabularySetIndex: 0
         }))
         expect(finalState.topics['1'].vocabularySetIDs).toEqual([])
-    })
-
-    it('selects topics', ()=>{
-        const nextState = {topics: {'topics': {
-            '1': {
-            id: 1,
-            name: 'first',
-            icon: 'first icon',
-            vocabularySetIDs: [],}
-        }}};
-        const result = {1: testState}
-        Selector(selectTopics).expect(nextState).toReturn(result);
     });
 
 })

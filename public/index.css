@@ -1,10 +1,4 @@
-/*
-background(dark green) : #0F292F
-BACKGROUND 2 (DARK BERRY): #501F3A
-TEXT(IVORY WHITE RO WHITE): #CCCCCC OR #FFFFFF
-NAVBAR(BERRY PINK): #CB296F
-ACCENTS (TEAL BLUE): #14A098 
-*/
+
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@500&display=swap');
 
 * {
@@ -17,7 +11,7 @@ ACCENTS (TEAL BLUE): #14A098
 html, 
 body{
     background: #00152b;
-    margin: 0; /*full width of navabr*/
+    margin: 0; /*full width of navbar*/
 }
 nav {
     display: flex;

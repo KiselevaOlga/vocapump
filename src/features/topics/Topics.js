@@ -34,9 +34,10 @@ export default function Topics () {
                 ))}
             </ul>
             <Link 
-            to={ROUTES.newTopicRoute()} 
-            className="center btn button" 
-            title="Click to create new topic">
+                to={ROUTES.newTopicRoute()} 
+                className="center btn button" 
+                title="Click to create new topic"
+            >
                  Create new topic
             </Link>
         </section>

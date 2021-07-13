@@ -15,6 +15,7 @@ const testSet = {
 describe('VocabularySetsSlice', ()=>{
     it('returns initial state', ()=>{
         const testState = vocabularySetsReducer(undefined, {});
+
         expect(testState).toEqual(initialState);
     });
 
@@ -22,6 +23,7 @@ describe('VocabularySetsSlice', ()=>{
         const testState = vocabularySetsReducer(initialState, addVocabularySet({
             id: 1
         }))
+
         expect(testState.vocabularySets[1]).toEqual(testSet);
     });
 
@@ -29,12 +31,11 @@ describe('VocabularySetsSlice', ()=>{
         const firstState = vocabularySetsReducer(initialState, addVocabularySet({
             id: 1
         }))
-
         const nextState = vocabularySetsReducer(firstState, addVocabularySet({
             id: 2
         }))
-
         const finalState = vocabularySetsReducer(nextState, removeSet(1))
+
         expect(Object.keys(finalState.vocabularySets).length).toEqual(1);
     });
 
@@ -50,7 +51,10 @@ describe('VocabularySetsSlice', ()=>{
             cardIDs: [4, 5, 6],
             id: 1,
         }));    
-        const updTopicsState = topicsReducer(topicsState, addVocabularySetIDForTopic({topicID: 0, vocabularySetID: 1}))
+        const updTopicsState = topicsReducer(
+            topicsState, 
+            addVocabularySetIDForTopic({topicID: 0, vocabularySetID: 1})
+        )
         
         expect(updTopicsState.topics[0].vocabularySetIDs[0]).toEqual(vocabularySetState.vocabularySets[1].id)
     });

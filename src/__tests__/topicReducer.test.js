@@ -17,6 +17,7 @@ const testState = {
 describe('topicsSlice', ()=>{
     it('returns initial state', ()=>{
         const nextState = topicsReducer(undefined, {})
+
         expect(nextState).toEqual(initialState)
     });
 
@@ -26,6 +27,7 @@ describe('topicsSlice', ()=>{
             name: 'first',
             icon: 'first icon',
         }));
+
         expect(nextState.topics[1]).toEqual(testState);
     });
 
@@ -35,7 +37,6 @@ describe('topicsSlice', ()=>{
             name: 'first',
             icon: 'first icon',
         }));
-
         const nextState = topicsReducer(firstState, addTopic({
             id: 2,
             name: 'second',
@@ -52,7 +53,6 @@ describe('topicsSlice', ()=>{
             name: 'first',
             icon: 'first icon',
         }));
-
         const finalState = topicsReducer(firstState, addVocabularySetIDForTopic({
             topicID: 1, 
             vocabularySetID: 4
@@ -67,16 +67,15 @@ describe('topicsSlice', ()=>{
             name: 'first',
             icon: 'first icon',
         }));
-
         const nextState = topicsReducer(firstState, addVocabularySetIDForTopic({
             topicID: 1, 
             vocabularySetID: 4
-        }))
-        
+        }))      
         const finalState = topicsReducer(nextState, removeVocabularySetIDForTopic({
             topicID: 1, 
             vocabularySetIndex: 0
         }))
+        
         expect(finalState.topics['1'].vocabularySetIDs).toEqual([])
     });
 

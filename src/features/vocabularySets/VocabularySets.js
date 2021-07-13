@@ -1,7 +1,10 @@
 import {Link} from 'react-router-dom';
 import ROUTES from '../../app/routes';
 import {useSelector, useDispatch} from 'react-redux';
-import {selectVocabularySets, removeSet, removeVocabularySetForTopicID} from './vocabularySetsSlice';
+import {
+    selectVocabularySets, 
+    removeSet, 
+    removeVocabularySetForTopicID} from './vocabularySetsSlice';
 import './VocabularySet.css';
 
 export default function VocabularySets () {
@@ -33,7 +36,12 @@ export default function VocabularySets () {
                     
                 ))}
             </ul>
-            <Link to={ROUTES.createNewVocabularySetRoute()} className="center btn button">Create a new vocabulary set</Link>
+            <Link 
+                to={ROUTES.createNewVocabularySetRoute()} 
+                className="center btn button"
+            >
+                Create a new vocabulary set
+            </Link>
         </section>
     )
 }

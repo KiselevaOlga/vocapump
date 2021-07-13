@@ -1,6 +1,11 @@
 import {addVocabularySetForTopicID, removeVocabularySetForTopicID} from '../features/vocabularySets/vocabularySetsSlice';
 import {initialState, addVocabularySet} from '../features/vocabularySets/vocabularySetsSlice';
-import {addVocabularySetIDForTopic,removeVocabularySetIDForTopic, topicsInitialState, addTopic} from '../features/topics/topicsSlice';
+import {
+    addVocabularySetIDForTopic,
+    removeVocabularySetIDForTopic, 
+    topicsInitialState, 
+    addTopic
+} from '../features/topics/topicsSlice';
 import vocabularySetsReducer from '../features/vocabularySets/vocabularySetsSlice';
 import topicsReducer from '../features/topics/topicsSlice';
 import configureMockStore from 'redux-mock-store';
@@ -16,8 +21,8 @@ describe('VocabularySets thunk action creators', () => {
             cardIDs: [4, 5, 6],
             id: 1,
         };
-        const store = mockStore(initialState);
 
+        const store = mockStore(initialState);
         store.dispatch(addVocabularySetForTopicID(sendPayload));
         const expectedActions = [addVocabularySet(sendPayload), addVocabularySetIDForTopic({topicID: 0, vocabularySetID: 1})];
         
@@ -46,8 +51,8 @@ describe('VocabularySets thunk action creators', () => {
             topicID: 0,
             vocabularySetIndex: updVocabularySetState.vocabularySets[1]
         };
-        const store = mockStore({topicsState, updVocabularySetState});
 
+        const store = mockStore({topicsState, updVocabularySetState});
         store.dispatch(removeVocabularySetForTopicID(sendPayload));
         const expectedActions = [removeVocabularySetIDForTopic(sendPayload)];
 

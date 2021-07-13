@@ -36,10 +36,12 @@ export default function Topic () {
                 ))}
             </ul>
             <Link 
-            to={ROUTES.createNewVocabularySetRoute()} 
-            title="Click to create a new vocabulary set"
-            className="center button btn"
-            >Create a new vocabulary set</Link>
+                to={ROUTES.createNewVocabularySetRoute()} 
+                title="Click to create a new vocabulary set"
+                className="center button btn"
+            >
+                Create a new vocabulary set
+            </Link>
         </section>
     )
 }

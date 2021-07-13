@@ -10,6 +10,7 @@ import './NewForm.css';
 export default function NewTopicForm () {
     const [name, setName] = useState("");
     const [icon, setIcon] = useState("");
+    
     const dispatch = useDispatch();
     const history = useHistory()
     
@@ -25,6 +26,7 @@ export default function NewTopicForm () {
             id: uuidv4(),
             icon,
         }))
+
         history.push(ROUTES.topicsRoute())
     }
     return (
@@ -33,16 +35,17 @@ export default function NewTopicForm () {
                 <h1 className="center">Create a new topic</h1>
                 <div className="form-section">
                     <input 
-                    id="topic-name"
-                    placeholder="Type a topic name here"
-                    type="text"
-                    value={name}
-                    onChange = {(e)=>setName(e.currentTarget.value)}
-                     />
+                        id="topic-name"
+                        placeholder="Type a topic name here"
+                        type="text"
+                        value={name}
+                        onChange = {(e)=>setName(e.currentTarget.value)}
+                    />
                     <select
-                    onChange = {(e)=>setIcon(e.currentTarget.value)}
-                    required
-                    defaultValue='default'>
+                        onChange = {(e)=>setIcon(e.currentTarget.value)}
+                        required
+                        defaultValue='default'
+                    >
                         <option value="">
                             Choose an icon for your topic
                         </option>
@@ -56,7 +59,9 @@ export default function NewTopicForm () {
                         ))}
                     </select>
                 </div>
-                <button className="center submit btn">Add topic</button>
+                <button className="center submit btn">
+                    Add topic
+                </button>
             </form>
         </section>
     )

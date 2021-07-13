@@ -11,15 +11,16 @@ import './NewForm.css';
 export default function NewVocabularySetForm () {
     const [name, setName]=useState("");
     const [topicID, setTopicID]=useState("");
+    const [cards, setCards]=useState([]);    
+
     const topics = useSelector(selectTopics);
     const history = useHistory()
-    const [cards, setCards]=useState([]);
     const dispatch = useDispatch()
 
     const handleSubmit=(e)=>{
         e.preventDefault();
         if (name.length===0){
-            alert('Please enter a name of vocabulary set');
+            alert('Please enter the name of the vocabulary set');
             return
         }
         const cardIDs = [];
@@ -71,7 +72,8 @@ export default function NewVocabularySetForm () {
                         placeholder="Topic" 
                         onChange={(e)=>setTopicID(e.currentTarget.value)}
                         id="vocabularySet-topic"
-                        required>
+                        required
+                    >
                         <option value="" >Select a topic</option>
                         {Object.values(topics).map(topic=>(
                             <option key={topic.id} value={topic.id}>
@@ -100,13 +102,19 @@ export default function NewVocabularySetForm () {
                                     updateCardState(index, 'translation', e.currentTarget.value)
                                 }}
                             ></input>  
-                            <button className="remove-btn side-btn" onClick={(e)=>removeCard(e, index)}>Remove card</button>                      
+                            <button className="remove-btn side-btn" onClick={(e)=>removeCard(e, index)}>
+                                    Remove card
+                            </button>                      
                         </div>
                     ))}        
 
                     <div className="button-bar">
-                        <button onClick={addCardInputs} className="side-btn">Add a card</button>
-                        <button className='center btn'>Create vocabulary set</button>
+                        <button onClick={addCardInputs} className="side-btn">
+                            Add a card
+                        </button>
+                        <button className='center btn'>
+                            Create vocabulary set
+                        </button>
                     </div>
                 </div>
             </form>

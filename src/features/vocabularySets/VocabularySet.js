@@ -17,11 +17,15 @@ export default function VocabularySet () {
             ? (
                 <Link 
                     to={ROUTES.createNewVocabularySetRoute()} 
-                    className="center btn button">
+                    className="center btn button"
+                >
                     Add cards to a vocabulary set
                 </Link>
             )
-            : (<Link to={ROUTES.vocabularySetsRoute()} className='center button btn'>Back to vocabulary sets</Link>)
+            : (<Link to={ROUTES.vocabularySetsRoute()} 
+                    className='center button btn'>
+                    Back to vocabulary sets
+                </Link>)
             }
                 {vocabularySet.cardIDs.map(id => (
                     <Card key={id} id={id}/>

@@ -2,7 +2,6 @@ import { Selector } from 'redux-testkit';
 import {selectTopics} from '../features/topics/topicsSlice';
 import {selectVocabularySets} from '../features/vocabularySets/vocabularySetsSlice';
 
-
 const testTopicState = {
     id: 1,
     name: 'first',
@@ -27,6 +26,7 @@ describe('TopicsSlice and VocabularySetsSlice selectors', () => {
                 vocabularySetIDs: [],}
             }}};
         const result = {1: testTopicState}
+
         Selector(selectTopics).expect(nextState).toReturn(result);
     });
 
@@ -40,6 +40,7 @@ describe('TopicsSlice and VocabularySetsSlice selectors', () => {
             }}}
 
         const result = {'1': testVocabularySetState};
+        
         Selector(selectVocabularySets).expect(nextState).toReturn(result);
     })
 })

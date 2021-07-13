@@ -17,13 +17,16 @@ export const topicsSlice = createSlice({
                 vocabularySetIDs: []
             }
         },
+
         removeTopic: (state, action)=>{
             delete state.topics[action.payload];
         },
+
         addVocabularySetIDForTopic: (state, action) => {
             const {topicID, vocabularySetID} = action.payload;
             state.topics[topicID].vocabularySetIDs.push(vocabularySetID);
         },
+
         removeVocabularySetIDForTopic: (state, action)=>{
             const {topicID, vocabularySetIndex} = action.payload;
             if(state.topics[topicID] !== undefined){
@@ -39,7 +42,10 @@ export const topicsSlice = createSlice({
     }
 })
 
-
-export const { addTopic, removeTopic, addVocabularySetIDForTopic, removeVocabularySetIDForTopic, removeSetsOfTopic} = topicsSlice.actions;
+export const { 
+    addTopic, 
+    removeTopic, 
+    addVocabularySetIDForTopic, 
+    removeVocabularySetIDForTopic} = topicsSlice.actions;
 export const selectTopics = (state) => {return state.topics.topics};
 export default topicsSlice.reducer;

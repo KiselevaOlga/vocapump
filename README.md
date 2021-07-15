@@ -1,3 +1,35 @@
+# VocaPump: React-Router-Redux app
+
+Website: https://vocapump.netlify.app
+
+VocaPump is a flashcard application that makes it easy for you to learn new words. 
+
+## Stack: 
+    - JavaScript
+    - React
+    - redux toolkit
+    - react-router-dom
+    - react-testing-library
+    - responsive design
+    - HTML5
+    - CSS3
+    - react-card-flip
+    - uuid
+
+### Features
+ 1. Add topics with pretty icons
+ 2. Delete topics by clicking X button
+ 3. Add vocabulary sets to topic
+ 4. While creating a set you can add or remove cards with words you want to learn
+ 5. Delete sets
+ 6. Topic state is updating when you add or remove sets
+ 7. You can use application on any type of device
+ 8. Practice new words with flashcards by clicking them
+ 9. Flashcard animation
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

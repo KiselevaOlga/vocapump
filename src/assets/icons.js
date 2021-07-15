@@ -18,6 +18,7 @@ import sneaker from './img/sneaker.png';
 import code from './img/code.png';
 import gov from './img/gov.png';
 import cheers from './img/cheers.png';
+import pawprint from './img/pawprint.png';
 
 export const ALL_ICONS = [
     {
@@ -99,6 +100,10 @@ export const ALL_ICONS = [
     {
       url: cheers,
       name: 'Celebration/holidays'
+    },
+    {
+      url: pawprint,
+      name: 'Animals/Nature'
     }
   ]
 
